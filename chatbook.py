@@ -23,7 +23,7 @@ class chatbook:
         elif user_input == "3":
             self.post()
         elif user_input == "4":
-            pass
+            self.sending()
         else:
             exit()
 
@@ -67,5 +67,9 @@ class chatbook:
             print("\n")
             frnd = input("Whome to send the msg? ->")
             print(f"your massage has been sent to {frnd}")
+        else :
+            print("you need to sighin to send a massage")
+        print("\n")
+        self.menu()
 
 obj = chatbook()
