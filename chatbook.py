@@ -19,9 +19,9 @@ class chatbook:
         if user_input == "1":
             self.signup()
         elif user_input == "2":
-            pass
+            self.signin()
         elif user_input == "3":
-            pass
+            self.post()
         elif user_input == "4":
             pass
         else:
@@ -35,5 +35,37 @@ class chatbook:
         print("You have sucessfully signed up !!")
         print("\n")
         self.menu()
+
+    def signin(self):
+        if self.username == "" and self.password == "" :
+            print("Please signup first by pressing 1 in the main menu")
+        else:
+            username = input("enter your email here ->")
+            password = input("enter your password ->")
+            if username == self.username and password == self.password :
+                print("you have signedin sucessfully ..")
+                self.loggedin = True
+
+            else:
+                print("please input correct credentials...")
+        print("\n")
+        self.menu()
+
+    def post(self):
+        if self.loggedin == False :
+            print("Please signin first, to post something !!")
+        else:
+            post = input("please write wour post here ")
+            print(f"following content has been posted -> {post}")
+
+        print("\n")
+        self.menu()
+
+    def sending(self):
+        if self.loggedin == True:
+            txt = input("Enter your massage here ->")
+            print("\n")
+            frnd = input("Whome to send the msg? ->")
+            print(f"your massage has been sent to {frnd}")
 
 obj = chatbook()
